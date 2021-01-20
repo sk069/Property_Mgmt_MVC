@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,9 @@ using Property_Mgmt_MVC.Data;
 using Property_Mgmt_MVC.Models;
 
 namespace Property_Mgmt_MVC.Controllers
+
 {
+    [Authorize]
     public class Customer_DetailController : Controller
     {
         private readonly Property_Mgmt_MVCdatabase _context;

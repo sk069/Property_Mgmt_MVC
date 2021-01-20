@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -47,6 +48,7 @@ namespace Property_Mgmt_MVC.Controllers
             return View(property_oction);
         }
 
+        [Authorize]
         // GET: Property_oction/Create
         public IActionResult Create()
         {
@@ -75,6 +77,7 @@ namespace Property_Mgmt_MVC.Controllers
             return View(property_oction);
         }
 
+        [Authorize]
         // GET: Property_oction/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -132,6 +135,7 @@ namespace Property_Mgmt_MVC.Controllers
             return View(property_oction);
         }
 
+        [Authorize]
         // GET: Property_oction/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
