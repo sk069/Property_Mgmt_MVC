@@ -4,7 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Prorety Auction</h1>
+
+<p>A property auction is a fast-paced, public sale. The property is sold to the buyer with the highest bid after the seller's reserve price is reached. You can enter your bid price with the help of this page.</p>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,16 +15,17 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Bid_Price)
+                Property Area
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Property_Detail)
+                Dealer Name
+            </th>
+            
+            <th>
+                Customer Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customer_Detail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dealer_Detail)
+                Bid Price
             </th>
             <th></th>
         </tr>
@@ -31,16 +34,18 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Bid_Price)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Property_Detail.Area)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Dealer_Detail.Dealer_Name)
+            </td>
+
+            <td>
                 @Html.DisplayFor(modelItem => item.Customer_Detail.Customer_Name)
             </td>
+            
             <td>
-                @Html.DisplayFor(modelItem => item.Dealer_Detail.Dealer_Name)
+                @Html.DisplayFor(modelItem => item.Bid_Price)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

@@ -4,7 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>All Dealers</h1>
+
+<p>This page holding the information about Deler who sold the propert to customers and also give the property buyers to owners. If you need to add any new Dealer you can use this page.</p>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,10 +15,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Dealer_Name)
+                Dealer Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Dealer_Address)
+               Dealer Address
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Mobile)
