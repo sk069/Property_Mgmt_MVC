@@ -4,6 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
+<!--code to show the create page data of the table-->
 <h1>Prorety Auction</h1>
 
 <img src="~/img/home.jpg" />
@@ -22,7 +23,7 @@
             <th>
                 Dealer Name
             </th>
-            
+
             <th>
                 Customer Name
             </th>
@@ -33,28 +34,29 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Property_Detail.Area)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dealer_Detail.Dealer_Name)
-            </td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Property_Detail.Area)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dealer_Detail.Dealer_Name)
+                </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.Customer_Detail.Customer_Name)
-            </td>
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.Bid_Price)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer_Detail.Customer_Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bid_Price)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
